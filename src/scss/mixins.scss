@@ -1,0 +1,69 @@
+// Screen breakpoints
+
+//1
+$min_w768: '(min-width: 768px)';
+$max_w768: '(max-width: 767px)';
+$min_w1024: '(min-width: 1025px)';
+$max_w1024: '(max-width: 1024px)';
+$min_w1280: '(min-width: 1280px)';
+$max_w1280: '(max-width: 1279px)';
+$min_w1366: '(min-width: 1366px)';
+$max_w1366: '(max-width: 1365px)';
+$min_w1440: '(min-width: 1440px)';
+$max_w1440: '(max-width: 1439px)';
+$min_w1600: '(min-width: 1600px)';
+$max_w1600: '(max-width: 1599px)';
+$min_w1920: '(min-width: 1920px)';
+$max_w1920: '(max-width: 1919px)';
+
+
+$ipadProPortrait: 'only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5)';
+$ipadProLandscape: 'only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1.5)';
+
+$ipadPortrait: 'only screen and (min-width: 768px) and (max-height: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5)';
+$ipadLandscape: 'only screen and (min-width: 768px) and (max-height: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1.5)';
+
+$mobile: 'only screen and (max-width: 450px) and (max-height: 770px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5)';
+
+
+//2
+@mixin tabvar {
+  @media (max-width: (1024px)) {
+    @content;
+  }
+}
+@mixin mobile {
+  @media (max-width: (768px)) {
+    @content;
+  }
+}
+
+// Example
+
+//1
+@media #{$max_w768} {
+
+}
+
+//2
+@include mobile {
+
+}
+
+
+
+
+@use 'sass:math';
+@function PXtoREM($current) {
+  @return ($current/16)+rem
+}
+
+
+// Transition
+$transitionDuration: .4s;
+$transitionTimingFunction: cubic-bezier(0.25, 0.1, 0.25, 1);
+$transition: $transitionDuration $transitionTimingFunction;
+
+// Colors
+$main: #BBDF32;
+//rgb (187, 223, 50)

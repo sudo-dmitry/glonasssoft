@@ -1,0 +1,91 @@
+.main-project-area {
+  min-height: 100vh;
+  .tables-area {
+    margin: PXtoREM(120) PXtoREM(50) PXtoREM(50);
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-between;
+    @include mobile {
+      margin-top: PXtoREM(50);
+    }
+    .table-block {
+      width: 31%;
+      @include mobile {
+        width: 100%;
+        margin: PXtoREM(20) 0;
+      }
+      .table {
+        border-radius: 10px;
+        background-color: rgba(229, 141, 46, .7);
+        padding: PXtoREM(10) PXtoREM(20);
+        display: flex;
+        flex-direction: column;
+        .row {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin: PXtoREM(5) 0;
+          input {
+            background-color: #000000;
+            color: white;
+            text-align: center;
+            width: 30%;
+            border-radius: 5px;
+            padding: PXtoREM(5);
+          }
+          .btn {
+            width: 30%;
+          }
+          &._add {
+            .btn {
+              margin-top: PXtoREM(10);
+              width: 100%;
+            }
+          }
+        }
+      }
+      &._last {
+        .table {
+          background-color: rgba(25, 133, 200, .7);
+          .row-area {
+            display: flex;
+            flex-direction: column;
+            .row {
+              input {
+                width: 45%;
+              }
+            }
+          }
+
+        }
+
+      }
+    }
+  }
+
+  .charts-area {
+    margin: PXtoREM(50);
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-between;
+    .chart-block {
+      width: 33%;
+      @include mobile {
+        width: 100%;
+        margin: PXtoREM(20) 0;
+      }
+      .chart {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        canvas {
+          width: PXtoREM(380);
+          height: PXtoREM(380);
+        }
+      }
+    }
+  }
+}
